@@ -1,0 +1,11 @@
+# Project-level display settings.
+title: "My Awesome Stars"
+
+# Star List inclusion & display overrides.
+# Only lists listed here are included in the generated README.
+# If this map is empty (or the file is missing), all Star Lists are included.
+categories:
+  AI-ML-DL:
+    title: "AI, ML & Deep Learning"
+    emoji: "🤖"
+    order: 1

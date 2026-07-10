@@ -1,0 +1,7 @@
+# Local secrets — never commit this file
+.env
+.env.local
+
+# Build artifacts
+/bin/
+*.exe

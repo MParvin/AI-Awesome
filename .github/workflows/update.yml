@@ -29,27 +29,32 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
-          README_CONTENT=$(cat README.md | python3 -c "import json,sys; print(json.dumps(sys.stdin.read()))")
+          python3 -c "
+          import json
+          with open('README.md') as f:
+              readme = f.read()
+          payload = {
+              'model': 'nvidia/nemotron-3-ultra-253b-v1:free',
+              'messages': [
+                  {
+                      'role': 'user',
+                      'content': 'You are given the README of a GitHub project. Based on its content, categorize the project (e.g. topic, domain, primary use case, tech stack). Return a concise, well-structured categorization in Markdown.\n\nREADME:\n' + readme
+                  }
+              ]
+          }
+          with open('payload.json', 'w') as f:
+              json.dump(payload, f)
+          "
 
-          RESPONSE=$(curl -s https://openrouter.ai/api/v1/chat/completions \
+          curl -s https://openrouter.ai/api/v1/chat/completions \
             -H "Authorization: Bearer $OPENROUTER_API_KEY" \
             -H "Content-Type: application/json" \
-            -d @- <<EOF
-          {
-            "model": "nvidia/nemotron-3-ultra-253b-v1:free",
-            "messages": [
-              {
-                "role": "user",
-                "content": "You are given the README of a GitHub project. Based on its content, categorize the project (e.g. topic, domain, primary use case, tech stack). Return a concise, well-structured categorization in Markdown.\n\nREADME:\n${README_CONTENT}"
-              }
-            ]
-          }
-          EOF
-          )
+            -d @payload.json > response.json
 
-          echo "$RESPONSE" | python3 -c "
+          python3 -c "
           import json, sys
-          data = json.load(sys.stdin)
+          with open('response.json') as f:
+              data = json.load(f)
           try:
               content = data['choices'][0]['message']['content']
           except (KeyError, IndexError):

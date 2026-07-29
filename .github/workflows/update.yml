@@ -25,15 +25,50 @@ jobs:
           GH_TOKEN: ${{ secrets.STARS_READ_TOKEN }}
         run: go run ./cmd/generate
 
+      - name: Categorize project with OpenRouter
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          README_CONTENT=$(cat README.md | python3 -c "import json,sys; print(json.dumps(sys.stdin.read()))")
+
+          RESPONSE=$(curl -s https://openrouter.ai/api/v1/chat/completions \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d @- <<EOF
+          {
+            "model": "nvidia/nemotron-3-ultra-253b-v1:free",
+            "messages": [
+              {
+                "role": "user",
+                "content": "You are given the README of a GitHub project. Based on its content, categorize the project (e.g. topic, domain, primary use case, tech stack). Return a concise, well-structured categorization in Markdown.\n\nREADME:\n${README_CONTENT}"
+              }
+            ]
+          }
+          EOF
+          )
+
+          echo "$RESPONSE" | python3 -c "
+          import json, sys
+          data = json.load(sys.stdin)
+          try:
+              content = data['choices'][0]['message']['content']
+          except (KeyError, IndexError):
+              print('Error: unexpected OpenRouter response:', data, file=sys.stderr)
+              sys.exit(1)
+          with open('CATEGORY.md', 'w') as f:
+              f.write(content)
+          "
+
       - name: Commit and push if changed
         run: |
-          if git diff --quiet README.md; then
-            echo "No changes to README.md"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md CATEGORY.md
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
             exit 0
           fi
 
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "chore: update awesome README from star lists"
+          git commit -m "chore: update awesome README and project categorization"
           git push

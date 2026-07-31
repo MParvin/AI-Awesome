@@ -3,11 +3,25 @@
 | Category | Details |
 |----------|---------|
 | **Project Type** | Curated Awesome List / Resource Aggregation |
-| **Primary Domain** | Artificial Intelligence, Machine Learning, Deep Learning (AI/ML/DL) |
-| **Topic** | Community-curated index of open-source AI/ML tools, frameworks, models, and applications |
-| **Primary Use Case** | Discovery and navigation of the AI/ML open-source ecosystem; reference for developers, researchers, and practitioners to find relevant libraries, models, and tools |
-| **Content Scope** | Comprehensive coverage across the AI/ML stack:<br>• **LLM Frameworks & Orchestration**: LangChain, LangGraph, LlamaIndex, AutoGen, CrewAI<br>• **Local Inference & Model Running**: Ollama, llama.cpp, vLLM, LM Studio, GPT4All<br>• **AI Agents & Coding Assistants**: OpenHands, Aider, Continue, Cursor, Devin alternatives<br>• **Model Training/Fine-tuning**: LoRA/QLoRA, LlamaFactory, Axolotl, DeepSpeed<br>• **Vector Databases & RAG**: Milvus, Qdrant, pgvector, Weaviate, LightRAG<br>• **Generative Media**: Stable Diffusion (ComfyUI, Automatic1111), TTS (Coqui, Fish Speech), Voice Cloning<br>• **Model Hubs & Gateways**: Hugging Face Transformers, LiteLLM, OpenRouter-compatible proxies<br>• **Datasets & Benchmarks**: Awesome Public Datasets, Chatbot Arena<br>• **Infrastructure & Deployment**: Docker stacks, Kubernetes operators, edge runtimes |
-| **Tech Stack** | Markdown-based documentation (auto-generated via [awesome-stars](https://github.com/mparvin/awesome-stars)); no runtime code |
-| **Maintenance** | Automated updates (last: 2026-07-29); pulls starred repositories from GitHub user/organization |
-| **Audience** | AI/ML engineers, researchers, developers, hobbyists, enterprise evaluators |
-| **Maturity** | Living document — continuously updated with high-signal, high-star projects |
+| **Primary Domain** | Artificial Intelligence, Machine Learning, Deep Learning |
+| **Core Purpose** | Discovery and navigation of the AI/ML open-source ecosystem |
+| **Content Scope** | 300+ repositories spanning the full AI stack |
+| **Maintenance** | Auto-generated via [awesome-stars](https://github.com/mparvin/awesome-stars) (last updated 2026-07-31) |
+
+---
+
+### Topical Coverage (Major Clusters)
+
+| Cluster | Representative Repos | Count Est. |
+|---------|---------------------|------------|
+| **LLM Inference & Serving** | `ollama/ollama`, `vllm-project/vllm`, `ggml-org/llama.cpp`, `nomic-ai/gpt4all`, `mudler/LocalAI` | ~25 |
+| **Agent Frameworks & Platforms** | `langchain-ai/langchain`, `langchain-ai/langgraph`, `microsoft/autogen`, `crewAIInc/crewAI`, `openai/openai-agents-python` | ~30 |
+| **Coding Agents & IDE Tools** | `anthropics/claude-code`, `openai/codex`, `Aider-AI/aider`, `cline/cline`, `continuedev/continue`, `TabbyML/tabby` | ~20 |
+| **RAG & Knowledge Retrieval** | `langgenius/dify`, `Cinnamon/kotaemon`, `HKUDS/LightRAG`, `QuivrHQ/quivr`, `Tencent/WeKnora` | ~15 |
+| **Vector Databases** | `milvus-io/milvus`, `qdrant/qdrant`, `pgvector/pgvector`, `surrealdb/surrealdb` | ~8 |
+| **Model Hubs & Gateways** | `huggingface/transformers`, `BerriAI/litellm`, `QuantumNous/new-api`, `looplj/axonhub` | ~10 |
+| **Image / Video Generation** | `AUTOMATIC1111/stable-diffusion-webui`, `Comfy-Org/ComfyUI`, `lllyasviel/Fooocus`, `Stability-AI/generative-models` | ~12 |
+| **Audio / Speech / TTS** | `coqui-ai/TTS`, `myshell-ai/OpenVoice`, `fishaudio/fish-speech`, `SYSTRAN/faster-whisper`, `rany2/edge-tts` | ~10 |
+| **Local-First / Offline AI** | `janhq/jan`, `open-webui/open-webui`, `Mintplex-Labs/anything-llm`, `nomic-ai/gpt4all` | ~15 |
+| **Fine-Tuning & Training** | `hiyouga/LlamaFactory`, `microsoft/LoRA`, `artidoro/qlora`, `deepspeedai/DeepSpeed`, `axolotl-ai-cloud/axolotl` | ~12 |
+| **Multi-Modal / Vision-Language** | `OpenBMB/MiniCPKPI

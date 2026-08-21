@@ -1,56 +1,58 @@
-# Project Categorization
+# Project Categorization: AI & ML & DL Awesome
 
-## 📌 Overview
-**AI & ML & DL Awesome** is a **curated awesome-list** repository that aggregates and categorizes high-profile open-source projects in the Artificial Intelligence, Machine Learning, and Deep Learning ecosystem. It is automatically generated from starred repositories via [awesome-stars](https://github.com/mparvin/awesome-stars).
+## 📋 Project Type
+- **Category**: Curated Awesome List / Resource Collection
+- **Nature**: Auto-generated index of GitHub repositories (via [awesome-stars](https://github.com/mparvin/awesome-stars))
+- **Format**: Markdown-based directory with star counts, descriptions, and links
 
----
+## 🎯 Domain & Topic
+- **Primary Domain**: Artificial Intelligence (AI), Machine Learning (ML), Deep Learning (DL)
+- **Sub-domains**:
+  - Large Language Models (LLMs) & Generative AI
+  - AI Agents & Agentic Workflows
+  - Retrieval-Augmented Generation (RAG)
+  - Model Inference & Serving
+  - Fine-tuning & Parameter-Efficient Training (LoRA, QLoRA)
+  - Vector Databases & Embeddings
+  - Multimodal AI (Vision, Audio, Speech)
+  - Coding Assistants & AI-Powered Development
+  - Local/Private AI & Edge Deployment
+  - AI Infrastructure & Tooling
 
-## 🏷️ Topic & Domain
-| Category | Details |
-|----------|---------|
-| **Primary Topic** | AI/ML/DL Resource Curation & Discovery |
-| **Domain** | Artificial Intelligence, Machine Learning, Deep Learning, Generative AI, LLMs, AI Agents |
-| **Sub-domains** | LLM Frameworks, AI Agents, Coding Assistants, RAG, Vector Databases, TTS/STT, Diffusion Models, Fine-tuning, Local AI, MLOps, Model Serving, AI Infrastructure |
+## 👥 Target Audience
+- AI/ML Engineers & Researchers
+- Software Developers integrating AI
+- Data Scientists & ML Practitioners
+- DevOps/MLOps Engineers
+- AI Enthusiasts & Hobbyists
+- Enterprise Architects evaluating AI stack
 
----
+## 🛠️ Tech Stack Representation (Across Listed Projects)
+| Layer | Technologies |
+|-------|--------------|
+| **Languages** | Python, C/C++, Rust, Go, TypeScript/JavaScript, Java/Kotlin, Zig |
+| **Frameworks** | PyTorch, TensorFlow, JAX, Hugging Face Transformers, LangChain, LlamaIndex |
+| **Inference** | vLLM, llama.cpp, Ollama, TensorRT, ONNX Runtime, TGI |
+| **Agent Frameworks** | LangGraph, AutoGen, CrewAI, OpenAI Agents SDK, ADK, PydanticAI |
+| **Vector DBs** | Milvus, Qdrant, pgvector, Chroma, Weaviate, LanceDB |
+| **Deployment** | Docker, Kubernetes, KubeFlow, Volcano, GPU operators |
+| **Interfaces** | Gradio, Streamlit, FastAPI, Tauri, Electron, React, Terminal UIs |
 
-## 🎯 Primary Use Cases
-- **Discovery & Exploration** – Find trending, high-quality AI/ML/DL repositories
-- **Technology Scouting** – Identify tools for LLM inference, agent frameworks, RAG pipelines, coding agents, local AI, model serving, etc.
-- **Learning & Research** – Educational resources (e.g., `microsoft/generative-ai-for-beginners`, `rasbt/LLMs-from-scratch`)
-- **Stack Selection** – Compare frameworks (LangChain, LlamaIndex, AutoGen, CrewAI, LangGraph, etc.)
-- **Production Reference** – Locate battle-tested components (vLLM, Ollama, Transformers, Milvus, Qdrant, etc.)
+## 📦 Primary Use Cases (Derived from Listed Projects)
+1. **Model Development** – Training, fine-tuning, quantization (LoRA, QLoRA, DeepSpeed, Axolotl)
+2. **Inference & Serving** – High-throughput LLM serving (vLLM, TGI, Ollama, LocalAI)
+3. **Agent Building** – Autonomous agents, multi-agent systems, tool use (LangGraph, AutoGen, CrewAI)
+4. **RAG & Knowledge** – Document QA, enterprise search (LightRAG, Dify, Quivr, Kotaemon)
+5. **Coding Assistance** – AI pair programming, code generation (Aider, Cline, Continue, Cursor alternatives)
+6. **Local/Private AI** – Offline, self-hosted models (Jan, GPT4All, LM Studio, Ollama)
+7. **Multimodal Apps** – Image gen (Stable Diffusion, ComfyUI), Voice (TTS, STT, cloning), Video
+8. **Data & Evaluation** – Labeling (Label Studio), benchmarks (Chatbot Arena), vulnerability scanning (Garak)
+9. **Infrastructure** – GPU orchestration, model gateways, MCP servers, vector search
 
----
+## 🔄 Maintenance & Freshness
+- **Last Updated**: 2026-08-21T03:04:57Z
+- **Update Mechanism**: Automated via awesome-stars (pulls starred repos from GitHub user)
+- **Scope**: Broad snapshot of popular AI/ML repos at time of generation
 
-## 🛠️ Tech Stack Representation (Observed Across Listed Projects)
-| Layer | Technologies / Frameworks |
-|-------|---------------------------|
-| **Core ML/DL Frameworks** | PyTorch, TensorFlow, JAX, Hugging Face Transformers, Accelerate, DeepSpeed |
-| **LLM Inference & Serving** | vLLM, Ollama, llama.cpp, TGI, LiteRT-LM, LocalAI, OpenLLM, SGLang |
-| **Agent Frameworks** | LangChain, LangGraph, AutoGen, CrewAI, OpenAI Agents SDK, ADK, PocketFlow, AG2 |
-| **RAG & Vector Search** | LlamaIndex, LightRAG, RAG-Anything, Milvus, Qdrant, pgvector, Weaviate, Chroma |
-| **Fine-tuning / Training** | LlamaFactory, Axolotl, Unsloth, LoRA/QLoRA, DeepSpeed, FSDP |
-| **Coding Agents / IDE Integration** | Cursor, Cline, Continue, Aider, OpenHands, Copilot, Codeium, Roo Code, Tabby |
-| **Local / Edge AI** | Ollama, Jan, GPT4All, LM Studio, llama.cpp, MLC-LLM, LiteRT, CoreML |
-| **Multimodal / Generative** | Stable Diffusion (ComfyUI, Automatic1111, Fooocus), Sora/Video models, Audio (Fish Speech, Coqui TTS, OpenVoice), Vision (MiniCPM-V, Moondream) |
-| **Infrastructure / MLOps** | Docker, Kubernetes (Volcano, KAI Scheduler), GPU Stack, BentoML, MLflow, Weights & Biases |
-| **APIs & Gateways** | LiteLLM, BerriAI Gateway, OpenRouter, New-API, AxonHub, Maxim Bifrost |
-| **Data & Tooling** | Label Studio, Datasets (Hugging Face), OCR (Marker, OCRmyPDF), PDF Extraction, Web Scraping (Browser-Use, Playwright MCP) |
-| **Languages** | Python (dominant), TypeScript/JavaScript, Go, Rust, C/C++, Zig, Java/Kotlin |
-
----
-
-## 📊 Project Nature
-| Attribute | Value |
-|-----------|-------|
-| **Type** | Curated Awesome List (Meta-repository) |
-| **Maintenance** | Auto-generated via `awesome-stars` (last update: 2026-08-19) |
-| **Structure** | Single-category flat list (🤖 AI, ML & Deep Learning) |
-| **Scale** | 200+ entries, covering stars from ~5 to ~386k |
-| **Audience** | AI/ML Engineers, Researchers, Developers, Architects, Students |
-
----
-
-## 🔖 Tags
-`awesome-list` `ai` `machine-learning` `deep-learning` `llm` `generative-ai` `ai-agents` `rag` `llm-inference` `fine-tuning` `coding-assistants` `vector-databases` `mlops` `local-ai` `multimodal` `curated-resources`
+## 🏷️ Tags
+`awesome-list` `ai` `machine-learning` `deep-learning` `llm` `generative-ai` `agents` `rag` `vector-database` `inference` `fine-tuning` `local-ai` `coding-assistant` `multimodal` `open-source` `curated-resources`

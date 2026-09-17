@@ -4,76 +4,59 @@ on:
   schedule:
     - cron: "0 2 */2 * *"
   workflow_dispatch:
+  push:
+    paths:
+      - "README.md"
 
 permissions:
   contents: write
 
 jobs:
   update:
+    # Avoid infinite loops: skip pushes created by this workflow's own commits.
+    if: >
+      github.event_name != 'push' ||
+      (
+        github.actor != 'github-actions[bot]' &&
+        (
+          github.event.head_commit == null ||
+          !contains(github.event.head_commit.message, '[skip categorize]')
+        )
+      )
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Go
+        if: github.event_name != 'push'
         uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
 
       - name: Generate README
+        if: github.event_name != 'push'
         env:
           GH_TOKEN: ${{ secrets.STARS_READ_TOKEN }}
         run: go run ./cmd/generate
 
-      - name: Categorize project with OpenRouter
+      - name: Categorize projects with OpenRouter
+        continue-on-error: true
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-        run: |
-          python3 -c "
-          import json
-          with open('README.md') as f:
-              readme = f.read()
-          payload = {
-              'model': 'nvidia/nemotron-3-ultra-550b-a55b:free',
-              'messages': [
-                  {
-                      'role': 'user',
-                      'content': 'You are given the README of a GitHub project. Based on its content, categorize the project (e.g. topic, domain, primary use case, tech stack). Return a concise, well-structured categorization in Markdown.\n\nREADME:\n' + readme
-                  }
-              ]
-          }
-          with open('payload.json', 'w') as f:
-              json.dump(payload, f)
-          "
-
-          curl -s https://openrouter.ai/api/v1/chat/completions \
-            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
-            -H "Content-Type: application/json" \
-            -d @payload.json > response.json
-
-          python3 -c "
-          import json, sys
-          with open('response.json') as f:
-              data = json.load(f)
-          try:
-              content = data['choices'][0]['message']['content']
-          except (KeyError, IndexError):
-              print('Error: unexpected OpenRouter response:', data, file=sys.stderr)
-              sys.exit(1)
-          with open('CATEGORY.md', 'w') as f:
-              f.write(content)
-          "
+          OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
+        run: python3 scripts/categorize_readme.py README.md
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md CATEGORY.md
+          git add README.md
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
 
-          git commit -m "chore: update awesome README and project categorization"
+          git commit -m "chore: update awesome README and project categories [skip categorize]"
           git push

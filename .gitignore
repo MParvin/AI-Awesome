@@ -5,3 +5,5 @@
 # Build artifacts
 /bin/
 *.exe
+
+scripts/__pycache__/

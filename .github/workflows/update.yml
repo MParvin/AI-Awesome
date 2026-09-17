@@ -45,13 +45,18 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
+          # Free-tier models are rate-limited; be patient between batches.
+          CATEGORIZE_BATCH_SIZE: "20"
+          CATEGORIZE_BATCH_DELAY_SECONDS: "15"
+          CATEGORIZE_MAX_RETRIES: "8"
+          CATEGORIZE_RETRY_BASE_SECONDS: "30"
         run: python3 scripts/categorize_readme.py README.md
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add README.md categories.json
 
           if git diff --cached --quiet; then
             echo "No changes to commit"

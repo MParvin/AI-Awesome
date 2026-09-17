@@ -1,0 +1,166 @@
+{
+  "projects": [
+    {
+      "name": "AUTOMATIC1111/stable-diffusion-webui",
+      "categories": [
+        "Generative AI",
+        "Computer Vision",
+        "AI Tools"
+      ]
+    },
+    {
+      "name": "Comfy-Org/ComfyUI",
+      "categories": [
+        "Generative AI",
+        "Computer Vision",
+        "AI Tools"
+      ]
+    },
+    {
+      "name": "NousResearch/hermes-agent",
+      "categories": [
+        "AI Agents",
+        "LLM"
+      ]
+    },
+    {
+      "name": "TauricResearch/TradingAgents",
+      "categories": [
+        "AI Agents",
+        "LLM",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "anomalyco/opencode",
+      "categories": [
+        "Coding Agents",
+        "AI Agents",
+        "LLM"
+      ]
+    },
+    {
+      "name": "anthropics/claude-code",
+      "categories": [
+        "Coding Agents",
+        "AI Agents",
+        "LLM",
+        "AI Tools"
+      ]
+    },
+    {
+      "name": "browser-use/browser-use",
+      "categories": [
+        "AI Agents",
+        "LLM"
+      ]
+    },
+    {
+      "name": "earendil-works/pi",
+      "categories": [
+        "AI Agents",
+        "Coding Agents",
+        "LLM",
+        "AI Tools"
+      ]
+    },
+    {
+      "name": "ggml-org/llama.cpp",
+      "categories": [
+        "LLM",
+        "AI Infrastructure"
+      ]
+    },
+    {
+      "name": "google-gemini/gemini-cli",
+      "categories": [
+        "AI Agents",
+        "LLM",
+        "AI Tools"
+      ]
+    },
+    {
+      "name": "huggingface/transformers",
+      "categories": [
+        "Machine Learning",
+        "Deep Learning",
+        "NLP",
+        "Computer Vision",
+        "Speech / Audio",
+        "Multimodal AI",
+        "AI Infrastructure"
+      ]
+    },
+    {
+      "name": "langchain-ai/langchain",
+      "categories": [
+        "AI Agents",
+        "LLM",
+        "RAG"
+      ]
+    },
+    {
+      "name": "langgenius/dify",
+      "categories": [
+        "AI Agents",
+        "RAG",
+        "LLM",
+        "AI Tools"
+      ]
+    },
+    {
+      "name": "microsoft/generative-ai-for-beginners",
+      "categories": [
+        "Generative AI",
+        "LLM"
+      ]
+    },
+    {
+      "name": "ollama/ollama",
+      "categories": [
+        "LLM",
+        "AI Infrastructure",
+        "AI Tools"
+      ]
+    },
+    {
+      "name": "open-webui/open-webui",
+      "categories": [
+        "LLM",
+        "AI Tools"
+      ]
+    },
+    {
+      "name": "openai/codex",
+      "categories": [
+        "Coding Agents",
+        "AI Agents",
+        "LLM",
+        "AI Tools"
+      ]
+    },
+    {
+      "name": "openclaw/openclaw",
+      "categories": [
+        "AI Agents",
+        "AI Tools"
+      ]
+    },
+    {
+      "name": "rasbt/LLMs-from-scratch",
+      "categories": [
+        "LLM",
+        "Deep Learning",
+        "Machine Learning"
+      ]
+    },
+    {
+      "name": "tensorflow/tensorflow",
+      "categories": [
+        "Machine Learning",
+        "Deep Learning",
+        "AI Infrastructure"
+      ]
+    }
+  ]
+}

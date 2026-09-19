@@ -1,4 +1,4 @@
-# AI & ML & DL Awesome — Categorized
+# AI & Machine Learning & Deep Learning Awesome — Categorized
 
 > Reorganized from the original starred-repo list into categories.
 
@@ -18,7 +18,7 @@
 - [Generative AI — Audio, Music & Podcasts](#generative-ai--audio-music--podcasts)
 - [Speech: TTS / STT / Voice](#speech-tts--stt--voice)
 - [Computer Vision & Multimodal Models](#computer-vision--multimodal-models)
-- [ML/DL Frameworks & Data Science](#mldl-frameworks--data-science)
+- [MachinLearning/DeepLearning Frameworks & Data Science](#machinelearning-deeplearning-frameworks--data-science)
 - [AI Infra, DevOps & MCP Servers for Ops](#ai-infra-devops--mcp-servers-for-ops)
 - [Security / Pentesting AI](#security--pentesting-ai)
 - [Mobile & Edge AI](#mobile--edge-ai)
@@ -238,7 +238,7 @@
 - [opendatalab/PDF-Extract-Kit](https://github.com/opendatalab/PDF-Extract-Kit) ⭐ 10015 — High-quality PDF content extraction toolkit
 - [pymupdf/PyMuPDF](https://github.com/pymupdf/PyMuPDF) ⭐ 10731 — High-performance PDF data-extraction library
 
-## ML/DL Frameworks & Data Science
+## Machine Learning/Deep Learning Frameworks & Data Science
 
 - [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) ⭐ 200166 — Open-source machine-learning framework
 - [rasbt/LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch) ⭐ 105148 — Build a ChatGPT-like LLM in PyTorch from scratch
@@ -314,4 +314,4 @@
 - [surrealdb/surrealdb](https://github.com/surrealdb/surrealdb) ⭐ 33043 — Scalable distributed document-graph database
 - [valkey-io/valkey](https://github.com/valkey-io/valkey) ⭐ 27228 — Distributed key-value database (Redis fork)
 - [emscripten-core/emscripten](https://github.com/emscripten-core/emscripten) ⭐ 27612 — LLVM-to-WebAssembly compiler
-- [ty4z2008/Qix](https://github.com/ty4z2008/Qix) ⭐ 15207 — General ML/DL/DB/distributed-systems resource list
+- [ty4z2008/Qix](https://github.com/ty4z2008/Qix) ⭐ 15207 — General MachineLearning/DeepLearning/DB/distributed-systems resource list
